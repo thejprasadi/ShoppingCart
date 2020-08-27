@@ -1,0 +1,52 @@
+<div class="card mb-4 shadow-sm">
+  <div class="card-img-wrapper">
+    <img class="card-img-top" src="assets/images/laptop.jpg">
+    <ul class="list-inline text-center member-icons animate">
+      <li class="list-inline-item">
+        <!-- <button class="btn btn-primary" routerLink="productdetails" (click)=fetchData()><i class="fas fa-expand"></i></button> -->
+        <button class="btn btn-primary" routerLink="/productdetails"  (click)=fetchData() ><i class="fas fa-expand"></i></button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">
+      <strong>{{ productItem.name}}</strong>
+      <!-- <i *ngIf="addedToWishlist" class="fas fa-heart float-right" (click)="handleRemoveFromWishlist()"></i>
+      <i *ngIf="!addedToWishlist" class="far fa-heart float-right" (click)="handleAddToWishlist()"></i> -->
+    </p>
+    <p class="card-text text-danger"> {{ productItem.unitPrice |currency:'LKR' }}</p>
+    <p class="card-text">{{ productItem.description }}</p>
+    <form #form="ngForm">
+      <div class="row ">
+
+        <div class="input-group-prepend col-md-2 float-left">
+          <span class="input-group-text " id="basic-addon1"><i class="fas fa-box-open"></i>  Quantity  </span>
+
+        <input
+          type="number"
+          min="1"
+          max="10"
+          value="{{ item.qty }}"
+          class="product-qty-btn"
+          name="qty"
+          #qty="ngModel"
+          [(ngModel)]="item.qty"
+        />
+      </div>
+    </div>
+    </form>
+    <hr>
+    <div class="d-flex justify-content-between align-items-center">
+
+      <div class="btn-group">
+
+        <button type="button" class="btn btn-sm btn-primary product-btn" (click)="handlerAddToCart()">Add to
+          Cart</button>
+          <!-- <button type="button" class="btn btn-sm btn-primary product-btn">Add to
+            Cart</button> -->
+        <button type="button" class="btn btn-sm btn-outline-secondary product-btn">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+button[type=submit].btn{
+  border-radius: 20px;
+  background-color: #165269;
+  color: #fff;
+}

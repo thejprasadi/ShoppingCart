@@ -1,0 +1,74 @@
+
+<div class="row" >
+  <div class="col-md-4 offset-md-4">
+    <div class="guest-form-card card">
+
+      <div class="card-header text-center">
+        <h2>Register Here</h2>
+      </div>
+
+      <div class="card-body"><form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
+        <img src="/assets/images/single_user.png" class="mx-auto d-block">
+  <div class="form-group required">
+    <label>Full Name</label>
+    <input class="form-control" formControlName="FullName">
+    <label class="text-danger" *ngIf="service.formModel.get('FirstName').touched && service.formModel.get('FirstName').errors?.required">This field is required</label>
+  </div>
+  
+  <div class="form-group required">
+    <label>Email</label>
+    <input class="form-control" formControlName="Email">
+    <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">Please provide valid email address</label>
+  </div>
+  <div class="form-group">
+    <label>Phone Number</label>
+    <input class="form-control" formControlName="ContatctNo">
+
+  </div>
+  <div class="form-group required">
+    <label>Address Line 1</label>
+    <input class="form-control" formControlName="Address_Line1">
+    <label class="text-danger" *ngIf="service.formModel.get('Address_Line1').touched && service.formModel.get('Address_Line1').errors?.required">This field is required</label>
+  </div>
+  <div class="form-group required">
+    <label>Address Line 2</label>
+    <input class="form-control" formControlName="Address_Line2">
+    <label class="text-danger" *ngIf="service.formModel.get('Address_Line2').touched && service.formModel.get('Address_Line2').errors?.required">This field is required</label>
+  </div>
+  <div class="form-group required">
+    <label>State</label>
+    <input class="form-control" formControlName="State">
+    <label class="text-danger" *ngIf="service.formModel.get('State').touched && service.formModel.get('State').errors?.required">This field is required</label>
+  </div>
+  <div class="form-group required">
+    <label>Postal Code</label>
+    <input class="form-control" formControlName="PostalCode">
+    <label class="text-danger" *ngIf="service.formModel.get('PostalCode').touched && service.formModel.get('PostalCode').errors?.required">This field is required</label>
+  </div>
+  <div formGroupName="Passwords">
+  <div class="form-group required">
+    <label>Password</label>
+    <input type="password" class="form-control" formControlName="Password">
+    <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">This field is required</label>
+    <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength"> Mininum 4 character required</label>
+  </div>
+  <div class="form-group required">
+    <label>Confirm Password</label>
+    <input type="password" class="form-control" formControlName="ConfirmPassword">
+    <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">This field is required</label>
+    <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">Confirm password does not match</label>
+  </div>
+</div>
+<div class="form-row">
+  <div class="form-group col-md-8 offset-md-2">
+    <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">Register</button>
+  </div>
+</div>
+
+</form>
+</div>
+</div>
+</div>
+</div>
+
+

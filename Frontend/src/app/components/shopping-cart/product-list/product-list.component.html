@@ -1,0 +1,7 @@
+<div class="row">
+  <!-- <div class="row" *ngIf="(products$ |async) as properties"> -->
+  <div class="col-md-4" *ngFor="let product of productList"  class="shadow-lg col-sm-4 p-3">
+    <app-product-item [productItem]="product"></app-product-item>
+  </div>
+</div>
+<!-- </div> -->

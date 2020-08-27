@@ -1,0 +1,26 @@
+<div class="row " >
+
+    <div class="guest-form-card card">
+
+      <div class="card-header text-center">
+        <h2><i class="fas fa-shopping-cart"></i>  My Cart </h2>
+      </div>
+
+<div *ngIf="cartItems.length === 0" class="alert alert-info">
+
+  Your Cart is Empty.</div>
+
+<ul *ngIf="cartItems.length > 0" class="list-group">
+  <li class="list-group-item" *ngFor="let item of cartItems">
+    <app-cart-item [cartItem]="item"></app-cart-item>
+  </li>
+
+  <li class="list-group-item active">
+    <strong>Total</strong> {{ cartTotal | currency:'LKR ' }} </li>
+    <li class="list-group-item active">
+    <button class="btn btn-lg btn-block" routerLink='/checkout' routerLinkActive='active'>Checkout</button></li>
+
+</ul>
+</div>
+</div>
+

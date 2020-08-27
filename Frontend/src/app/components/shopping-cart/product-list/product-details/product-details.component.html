@@ -1,0 +1,37 @@
+<div class="card" style="margin-top: 20px; margin-left: 150px; margin-right: 150px;">
+  <ul class="list-inline  member-icons animate">
+  <li class="list-inline-item">
+  <div class="container rounded">
+    <div class="row">
+      <div class="col-sm-6" style="margin-top: 20px;">
+        <img class="card-img" src="assets/images/laptop.jpg" >
+      </div>
+      <div class="col-sm" style="margin-top: 20px;">
+        <h2 class="text-left "><strong> {{data.name}}  {{data.code}}</strong></h2>
+          <h2 class="text-danger text-left offset-md-2 ">
+            Rs.  {{data.unitPrice | number}}
+          </h2><br><br>
+          <h5 class="font-weight-bold font-italic">Product details</h5>
+          <p class="font-weight-light">Model - {{data.name}}</p>
+          <p class="font-weight-light">Features -  {{data.code}}</p>
+          <div class="badge badge-primary  text-left " style="width: 8rem; ">
+            Quantity In Stock: {{data.quantityInStock}}
+          </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend offset-md-6">
+            <span class="input-group-text " id="basic-addon1"><i class="fas fa-box-open"></i>  Quantity </span>
+          <!-- <input class="quantity" id="id_form-0-quantity" min="0" name="form-0-quantity"  value="1" type="number" [(ngModel)]="quantityModel.qty"> -->
+          </div>
+          <!-- <button type="button" class="btn btn-primary btn-md offset-md-1" (click)="addToCart(data)" ><i class="fas fa-cart-plus"></i> Add to Cart</button> -->
+          <!-- <button type="button" class="btn btn-primary btn-md offset-md-1" (click)="handleAddToCart(data)" ><i class="fas fa-cart-plus"></i> Add to Cart</button> -->
+        </div>
+    </div>
+  </div>
+  </li>
+  </ul>
+</div>
+
